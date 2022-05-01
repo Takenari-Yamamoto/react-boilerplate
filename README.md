@@ -9,3 +9,6 @@
 - 新しくライブラリを追加したい場合は、developからブランチを切って動作確認後にマージする
 
 
+# 開発環境
+
+Yarn / Typescript / AtomicDesign / Storybook / Cypress / Jest / 
