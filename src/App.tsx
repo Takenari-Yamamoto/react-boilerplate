@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
+import './App.css';
 import { InputField } from '../src/InputField';
 import { Todo } from './model';
+import { TodoList } from './TodoList';
 
-const App: React.FC = () => {
+const App = () => {
   const [todo, setTodo] = useState('');
   const [todos, setTodos] = useState<Todo[]>([]);
 
@@ -29,7 +30,10 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
+      <span className="heading">Taskify</span>
       <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
+
+      <TodoList todos={todos} setTodos={setTodos} />
     </div>
   );
 };
