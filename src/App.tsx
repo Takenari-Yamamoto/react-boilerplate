@@ -1,5 +1,5 @@
-import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import AppButton from './components/0_atoms/AppButton';
 
 function App() {
@@ -10,6 +10,8 @@ function App() {
   return (
     <div className="App">
       <h1>My React Project</h1>
+      <Link to="/">Home</Link>
+      <Link to="/about">About</Link>
       <AppButton text={'ボタン'} clickButton={() => fetchData()} />
     </div>
   );
