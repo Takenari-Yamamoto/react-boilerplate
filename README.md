@@ -30,4 +30,4 @@ git checkout init/project
 
 # 開発環境
 
-Yarn / Typescript / AtomicDesign / Storybook 
+Yarn / Typescript / AtomicDesign / Storybook / axios
