@@ -4,7 +4,7 @@ import AppButton from './components/0_atoms/AppButton';
 
 function App() {
   const fetchData = async () => {
-    const res = await axios.get('https://pokeapi.co/api/v2/pokemon/pikachu');
+    const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/tasks/2`);
     console.log(res.data);
   };
   return (
