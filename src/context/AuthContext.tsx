@@ -1,14 +1,20 @@
-import React, { createContext } from 'react';
+import React, { createContext, useState } from 'react';
 
 type Props = {
   children: React.ReactNode;
 };
 
-export const AuthContext = createContext(false);
+type InitialState = {
+  userAuth: boolean;
+  setUserAuth: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export const AuthContext = createContext<InitialState | null>(null);
 
 export const AuthProvider: React.VFC<Props> = ({ children }) => {
+  const [userAuth, setUserAuth] = useState(false);
   return (
-    <AuthContext.Provider value={false}>
+    <AuthContext.Provider value={{ userAuth, setUserAuth }}>
       {/* ラップ予定のコンポーネント（children） */}
       {children}
     </AuthContext.Provider>

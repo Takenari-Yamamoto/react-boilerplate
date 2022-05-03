@@ -3,10 +3,22 @@ import { AuthContext } from '../context/AuthContext';
 
 export const AuthButton = () => {
   const auth = useContext(AuthContext);
-  console.log(auth, 999);
+
+  const handleSingOut = () => {
+    auth?.setUserAuth(false);
+  };
+
+  const handleSingIn = () => {
+    auth?.setUserAuth(true);
+  };
+
   return (
     <React.Fragment>
-      {auth ? <button>ログアウト</button> : <button>ログイン</button>}
+      {auth?.userAuth ? (
+        <button onClick={handleSingOut}>ログアウト</button>
+      ) : (
+        <button onClick={handleSingIn}>ログイン</button>
+      )}
     </React.Fragment>
   );
 };
