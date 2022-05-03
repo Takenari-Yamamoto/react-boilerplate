@@ -9,6 +9,13 @@ yarn install
 yarn start
 ```
 
+# 完全初期のブランチ
+
+以下は create-react-app した直後のものです
+```
+git checkout init/project
+```
+
 # 運用手順
 
 - develop ブランチがボイラープレートになる
