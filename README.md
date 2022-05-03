@@ -9,6 +9,12 @@ yarn install
 yarn start
 ```
 
+## Storybook
+
+```
+yarn storybook
+```
+
 # 完全初期のブランチ
 
 以下は create-react-app した直後のものです
@@ -24,4 +30,4 @@ git checkout init/project
 
 # 開発環境
 
-Yarn / Typescript / AtomicDesign / Storybook / Cypress / Jest / 
+Yarn / Typescript / AtomicDesign / Storybook 
