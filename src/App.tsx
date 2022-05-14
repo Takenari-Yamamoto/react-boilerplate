@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { css } from '@emotion/react';
 import { Title } from './components/0_atoms/Title';
 import { SubTitle } from './components/SubTitle';
@@ -19,15 +19,18 @@ function App() {
   const [countA, setCountA] = useState(0);
   const [countB, setCountB] = useState(0);
 
+  useCallback(() => {}, []);
+
   // React.memoの中では、違う関数だと認識される
-  const handleCountUpA = () => {
+  const handleCountUpA = useCallback(() => {
     console.log('A');
     setCountA(countA + 1);
-  };
-  const handleCountUpB = () => {
+  }, [countA]);
+
+  const handleCountUpB = useCallback(() => {
     console.log('A');
     setCountB(countB + 1);
-  };
+  }, [countB]);
 
   console.log('-----------');
 
