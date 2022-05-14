@@ -19,6 +19,7 @@ function App() {
   const [countA, setCountA] = useState(0);
   const [countB, setCountB] = useState(0);
 
+  // React.memoの中では、違う関数だと認識される
   const handleCountUpA = () => {
     console.log('A');
     setCountA(countA + 1);
@@ -27,6 +28,9 @@ function App() {
     console.log('A');
     setCountB(countB + 1);
   };
+
+  console.log('-----------');
+
   return (
     <div css={container}>
       <Title title="useCallback" />

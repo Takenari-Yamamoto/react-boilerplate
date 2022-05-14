@@ -19,10 +19,13 @@ const buttonStyle = css`
   cursor: pointer;
 `;
 
-export const Button = ({ title, onClick }: Props) => {
+// React.memo でラップすることでボタンコンポーネント に渡す props に変更がない場合は再レンダリングされない
+// react.memoでProps の前後の値を比較してレンダリングするかを決定している
+export const Button = React.memo(({ title, onClick }: Props) => {
+  console.log(`Button: ${title}`);
   return (
     <button css={buttonStyle} onClick={onClick} type="button">
       {title}
     </button>
   );
-};
+});

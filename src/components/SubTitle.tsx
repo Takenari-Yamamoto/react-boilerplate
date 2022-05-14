@@ -6,7 +6,8 @@ type Props = {
   title: string;
 };
 
-export const SubTitle = ({ title }: Props) => {
+export const SubTitle = React.memo(({ title }: Props) => {
+  console.log('Sub Title');
   return (
     <h2
       css={css`
@@ -16,4 +17,4 @@ export const SubTitle = ({ title }: Props) => {
       {title}
     </h2>
   );
-};
+});

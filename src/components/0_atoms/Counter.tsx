@@ -7,7 +7,8 @@ type Props = {
   count: number;
 };
 
-export const Counter = ({ title, count }: Props) => {
+export const Counter = React.memo(({ title, count }: Props) => {
+  console.log(`Counter: ${title}`);
   return (
     <h1
       css={css`
@@ -18,4 +19,4 @@ export const Counter = ({ title, count }: Props) => {
       {title}派:<span> {count}人</span>
     </h1>
   );
-};
+});
