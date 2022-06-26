@@ -27,6 +27,16 @@ git checkout init/project
 - develop ブランチがボイラープレートになる
 - 新しくライブラリを追加したい場合は、developからブランチを切って動作確認後にマージする
 
+# ルーティングの設定
+
+- src/index.tsx で編集してできる
+- 参考: https://reffect.co.jp/react/react-router-6#Not_Found_Routes
+
+```tsx
+ <Route path="/パス名" element={<表示するコンポーネント />} />
+```
+
+
 
 # 開発環境
 
