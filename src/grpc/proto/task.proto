@@ -1,0 +1,32 @@
+syntax = "proto3";
+package sample;
+
+// サンプルサービス
+// APIの定義本体
+service TaskService {
+  // タスク作成メソッド
+  rpc CreateTask(CreateTaskRequest) returns (CreateTaskResponse){};
+  // タスク取得メソッド
+  rpc ReadTaskList(ReadTaskListRequest) returns (ReadTaskListResponse){};
+}
+
+// タスク作成用
+message CreateTaskRequest {
+  string title = 1;
+  string content = 2;
+};
+
+message CreateTaskResponse {
+  int32 id = 1;
+};
+
+// タスク取得用
+message ReadTaskListRequest {
+  int32 id = 1;
+};
+
+message ReadTaskListResponse {
+  int32 id = 1;
+  string title = 2;
+  string content = 3;
+};
