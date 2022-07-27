@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { useCallback, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import InputForm from './components/0_atoms/InputForm';
 
 function App() {
@@ -13,8 +13,10 @@ function App() {
 
   const [name, setName] = useState('');
   const handleInputName = useCallback((e: string) => setName(e), []);
+
   const [email, setEmail] = useState('');
   const handleInputEmail = useCallback((e: string) => setEmail(e), []);
+
   const [password, setPassword] = useState('');
   const handleInputPassword = useCallback((e: string) => setPassword(e), []);
 
@@ -28,6 +30,11 @@ function App() {
           handleChange={handleInputPassword}
           value={password}
         />
+      </div>
+      <div css={containerStyle}>
+        <p>名前: {name}</p>
+        <p>メール: {email}</p>
+        <p>パスワード: {password}</p>
       </div>
     </div>
   );
