@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import Button from '@mui/material/Button';
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useState } from 'react';
 import InputForm from './components/0_atoms/InputForm';
 
 function App() {
@@ -38,7 +38,12 @@ function App() {
   return (
     <div css={appStyle}>
       <div css={containerStyle}>
-        <InputForm label="名前" handleChange={handleInputName} value={name} />
+        <InputForm
+          label="名前"
+          handleChange={handleInputName}
+          value={name}
+          required
+        />
         <InputForm label="メール" handleChange={handleInputEmail} />
         <InputForm label="パスワード" handleChange={handleInputPassword} />
         <Button variant="contained" onClick={() => toggle(true)}>

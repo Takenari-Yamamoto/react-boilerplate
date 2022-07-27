@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import TextField, { TextFieldProps } from '@mui/material/TextField';
 import { ChangeEvent, memo, useRef } from 'react';
+import { useForm } from 'react-hook-form';
 
 type CustomProp = {
   handleChange: (e: string) => void;
@@ -9,9 +10,10 @@ type InputProp = JSX.IntrinsicElements['input'];
 type MuiProp = TextFieldProps;
 type Prop = CustomProp & InputProp & MuiProp;
 
+// FIX: 再レンダリングさせないようにしたい
 const InputForm = (props: Prop) => {
   const { handleChange, value, ...otherProp } = props;
-  // FIX: 再レンダリングさせないようにしたい
+  const { register } = useForm();
   const ref = useRef<HTMLInputElement>(null);
   const onChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     if (!ref.current?.value) {
@@ -22,10 +24,11 @@ const InputForm = (props: Prop) => {
 
   return (
     <TextField
+      {...register('name')}
+      onChange={onChange}
       id="outlined-basic"
       variant="outlined"
       inputRef={ref}
-      onChange={onChange}
       {...otherProp}
     />
   );
