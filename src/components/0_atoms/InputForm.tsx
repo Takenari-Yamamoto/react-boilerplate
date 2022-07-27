@@ -2,12 +2,6 @@
 import TextField, { TextFieldProps } from '@mui/material/TextField';
 import { ChangeEvent, memo, useRef } from 'react';
 
-// type InputProps = {
-//   label: string;
-//   value: string;
-//   handleChange: (e: string) => void;
-// };
-
 type CustomProp = {
   handleChange: (e: string) => void;
 };
