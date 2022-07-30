@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { About } from './components/4_pages/About';
 import { NotFound } from './components/4_pages/error/NotFound';
 import { ApiDocs } from './components/4_pages/ApiDocs';
+import HookDemo from './components/4_pages/HookDemo';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -15,6 +16,7 @@ root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} />
+      <Route path="/hook" element={<HookDemo />} />
       <Route path="/about" element={<About />} />
       <Route path="/api/docs" element={<ApiDocs />} />
       <Route path="*" element={<NotFound />} />
