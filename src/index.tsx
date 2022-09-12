@@ -3,9 +3,6 @@ import './reset.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { About } from './components/4_pages/About';
-import { NotFound } from './components/4_pages/error/NotFound';
-import { ApiDocs } from './components/4_pages/ApiDocs';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -15,9 +12,6 @@ root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/api/docs" element={<ApiDocs />} />
-      <Route path="*" element={<NotFound />} />
     </Routes>
   </BrowserRouter>
 );
